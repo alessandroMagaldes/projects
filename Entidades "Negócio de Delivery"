@@ -1,0 +1,83 @@
+Pessoas (pai) {
+  Nome;
+  Sobrenome;
+  Data de nascimento;
+  CPF/RG;
+  Função;
+  Endereço;
+  Contato;
+}
+
+
+Herdeiros
+
+restauranteGerente {
+  restauranteGerente_ID;
+  Empresa_ID;
+  Filial_ID;
+}
+
+deliveryGestor {
+  deliveryGestor_ID;
+  restauranteGerente_ID;
+  Filial_ID;
+}
+
+supervisorGerente {
+  supervisorGerente_ID;
+  supervisorEntregador_ID;
+}
+
+supervisorEntregador {
+  supervisorEntregador_ID;
+  regiao/zona;
+}
+
+entregador {
+  entregador_ID;
+  moto;
+  CNH;
+  supervisorEntregador_ID;
+}
+  
+ 
+  
+  
+Outras entitades
+
+empresa {
+  empresa_ID
+  razaoSocial;
+  CNPJ;
+  nomeFantasia;
+  filial_ID
+}
+
+filial {
+  filial_ID
+  razaoSocial;
+  CNPJ;
+  empresa_ID;
+  restauranteGerente_ID;
+  deliveryGestor_ID;
+}
+
+pedido {
+  pedido_ID;
+  sequencia;
+  taxaEntrega;
+  localizacao;
+  distancia;
+  horarioSaida;
+  horarioChegada;
+}
+
+rotas {
+  pedido_ID;
+  trajeto;
+}
+
+fila {
+  entregador_ID
+}
+  
